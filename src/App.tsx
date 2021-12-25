@@ -1,3 +1,5 @@
+import nf1Image from './assets/images/nf1.png'
+
 function App() {
   return (
     <>
@@ -35,7 +37,7 @@ function App() {
                 key={index}
                 className="p-4 rounded-md bg-gradient-to-br from-darkBlue-900 to-transparent shadow-md space-y-3"
               >
-                <img src="/images/nf1.png" />
+                <img src={nf1Image} />
                 <p className="text-darkBlue-200">@something</p>
                 <h3>Yellow Pointing</h3>
                 <button className="w-full bg-gradient-to-br from-[#671AE4] to-[#B75CFF] shadow-md p-2 rounded-md cursor-pointer text-white">
