@@ -1,8 +1,18 @@
-import nf1Image from './assets/images/nf1.png'
+import { useState } from 'react'
+
+import nf1Image from 'assets/images/nf1.png'
+import CreateCharacterModal from 'components/Modals/CreateCharacterModal'
 
 function App() {
+  const [isOpenModal, setIsOpenModal] = useState(false)
+
   return (
     <>
+      <CreateCharacterModal
+        isOpen={isOpenModal}
+        onClose={() => setIsOpenModal(false)}
+      />
+
       <section>
         <div className="primary-container py-12 border-b-2">
           <h1 className="text-center font-bold text-white text-4xl sm:text-5xl md:text-8xl w-full">
@@ -57,7 +67,10 @@ function App() {
               CHARACTER
             </h2>
             <div className="flex justify-center mt-4">
-              <button className="p-4 rounded-md bg-gradient-to-br from-darkBlue-900 to-transparent shadow-md">
+              <button
+                className="p-4 rounded-md bg-gradient-to-br from-darkBlue-900 to-transparent shadow-md"
+                onClick={() => setIsOpenModal(true)}
+              >
                 Create Character
               </button>
             </div>
