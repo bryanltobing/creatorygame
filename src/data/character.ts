@@ -9,11 +9,11 @@ export const characterCategories: CharacterCategoriesType[] = [
 
 export const characterCodes = [
   {
-    key: '1',
-    value: 'Wizard',
+    label: 'Wizard',
+    value: '1',
   },
   {
-    key: '2',
-    value: 'Elf',
+    label: 'Elf',
+    value: '2',
   },
 ]

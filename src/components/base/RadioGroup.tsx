@@ -4,7 +4,7 @@ import cx from 'classnames'
 
 type RadioGroupProps = {
   options: {
-    key: string
+    label: string
     value: string
   }[]
   label: string
@@ -22,12 +22,14 @@ const RadioGroup = ({ options, label, onChange }: RadioGroupProps) => {
     <div className="w-full">
       <div className="w-full mx-auto">
         <_RadioGroup value={selected} onChange={setSelected}>
-          <_RadioGroup.Label>{label}</_RadioGroup.Label>
+          <_RadioGroup.Label className="text-lightMuted">
+            {label}
+          </_RadioGroup.Label>
 
           <div className="pt-4 flex items-center w-full gap-2">
             {options.map((option) => (
               <_RadioGroup.Option
-                key={option.key}
+                key={option.value}
                 value={option}
                 className="w-full"
               >
@@ -42,7 +44,7 @@ const RadioGroup = ({ options, label, onChange }: RadioGroupProps) => {
                         'flex items-center justify-between'
                       )}
                     >
-                      {option.value}
+                      {option.label}
 
                       {checked && <CheckIcon className="w-6 h-6" />}
                     </div>
