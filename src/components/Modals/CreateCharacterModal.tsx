@@ -1,13 +1,15 @@
 import { Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
+import { useNavigate } from 'react-router'
+import slugify from 'slugify'
 
 import Button from 'components/base/Button'
 import Modal from 'components/base/Modal'
 import RadioGroup from 'components/base/RadioGroup'
 
 import { characterCategories, characterCodes } from 'data/character'
-import slugify from 'slugify'
 import { createCharacter } from 'services/character'
+import useRequestState from 'hooks/useRequestState'
 
 type CreateCharacterModalProps = {
   isOpen: boolean
@@ -43,6 +45,10 @@ const CreateCharacterModal = ({
   isOpen,
   onClose,
 }: CreateCharacterModalProps) => {
+  const navigate = useNavigate()
+
+  const state = useRequestState()
+
   return (
     <Modal
       isOpen={isOpen}
@@ -53,9 +59,14 @@ const CreateCharacterModal = ({
         initialValues={initialValues}
         onSubmit={async (values) => {
           try {
+            state.start()
             await createCharacter(values)
+            onClose()
+            navigate(`/character/${values.slug}`)
           } catch (err) {
             alert(err)
+          } finally {
+            state.end()
           }
         }}
         validationSchema={validationSchema}
@@ -160,8 +171,12 @@ const CreateCharacterModal = ({
                   })}
                 </div>
               </div>
-              <Button className="w-full mt-4" type="submit">
-                Create
+              <Button
+                className="w-full mt-4"
+                type="submit"
+                disabled={state.loading}
+              >
+                {state.loading ? 'Loading...' : 'Create'}
               </Button>
             </Form>
           )

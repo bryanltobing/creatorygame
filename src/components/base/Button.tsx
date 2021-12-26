@@ -38,7 +38,9 @@ const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
       className={cx(
         'shadow-md rounded-md cursor-pointer',
         props.className,
-        variant,
+        !props.disabled
+          ? variant
+          : 'bg-gray-500 text-gray-400 cursor-not-allowed',
         size
       )}
     >
