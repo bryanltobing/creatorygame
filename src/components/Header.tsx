@@ -1,4 +1,5 @@
 import { HiSearch } from 'react-icons/hi'
+import Button from './base/Button'
 
 const Header = () => {
   return (
@@ -19,9 +20,9 @@ const Header = () => {
               placeholder="Search items, games...."
             />
           </div>
-          <button className="backgroundGradientPrimary p-4 rounded-md shadow-md w-full sm:w-auto">
+          <Button size="medium" className="w-full sm:w-auto">
             Create Character
-          </button>
+          </Button>
         </div>
       </div>
     </header>

@@ -13,6 +13,10 @@
   .backgroundGradientPrimary {
     @apply bg-gradient-to-br from-[#671AE4] to-[#B75CFF];
   }
+
+  .backgroundGradientSecondary {
+    @apply bg-gradient-to-br from-darkBlue-900 to-transparent;
+  }
 }
 
 body {

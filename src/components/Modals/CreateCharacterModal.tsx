@@ -1,3 +1,4 @@
+import Button from 'components/base/Button'
 import Modal from 'components/base/Modal'
 
 type CreateCharacterModalProps = {
@@ -28,9 +29,7 @@ const CreateCharacterModal = ({
           className="py-4 border-b-2 border-b-darkBlue-200 focus:border-b-white w-full focus:outline-none bg-transparent text-lightActive placeholder:text-lightMuted shadow-md"
           placeholder="Wealth"
         />
-        <button className="backgroundGradientPrimary w-fullshadow-md p-2 rounded-md cursor-pointer mt-4">
-          Create
-        </button>
+        <Button className="w-full mt-4">Create</Button>
       </form>
     </Modal>
   )

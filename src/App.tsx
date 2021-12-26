@@ -1,7 +1,9 @@
 import { useState } from 'react'
 
-import nf1Image from 'assets/images/nf1.png'
 import CreateCharacterModal from 'components/Modals/CreateCharacterModal'
+import Button from 'components/base/Button'
+
+import nf1Image from 'assets/images/nf1.png'
 
 function App() {
   const [isOpenModal, setIsOpenModal] = useState(false)
@@ -50,9 +52,7 @@ function App() {
                 <img src={nf1Image} />
                 <p className="text-lightMuted">@something</p>
                 <h3>Yellow Pointing</h3>
-                <button className="backgroundGradientPrimary w-full shadow-md p-2 rounded-md cursor-pointer">
-                  Place a bid
-                </button>
+                <Button className="w-full">Place a bid</Button>
               </li>
             ))}
           </ul>
@@ -67,12 +67,13 @@ function App() {
               CHARACTER
             </h2>
             <div className="flex justify-center mt-4">
-              <button
-                className="p-4 rounded-md bg-gradient-to-br from-darkBlue-900 to-transparent shadow-md"
+              <Button
+                variant="secondary"
+                size="medium"
                 onClick={() => setIsOpenModal(true)}
               >
                 Create Character
-              </button>
+              </Button>
             </div>
           </div>
         </div>
