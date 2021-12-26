@@ -3,7 +3,7 @@ import { useState } from 'react'
 import CreateCharacterModal from 'components/Modals/CreateCharacterModal'
 import Button from 'components/base/Button'
 
-import nf1Image from 'assets/images/nf1.png'
+import CharactersSection from 'components/Sections/CharactersSection'
 
 function App() {
   const [isOpenModal, setIsOpenModal] = useState(false)
@@ -26,38 +26,7 @@ function App() {
         </div>
       </section>
 
-      <section>
-        <div className="primary-container py-12 space-y-4">
-          <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full text-lightMuted text-center">
-            <li className="w-full bg-gradient-to-br from-darkBlue-900 to-transparent shadow-md p-2 rounded-md cursor-pointer">
-              Art
-            </li>
-            <li className="w-full bg-gradient-to-br from-darkBlue-900 to-transparent shadow-md p-2 rounded-md cursor-pointer">
-              Sport
-            </li>
-            <li className="w-full bg-gradient-to-br from-darkBlue-900 to-transparent shadow-md p-2 rounded-md cursor-pointer">
-              Photography
-            </li>
-            <li className="backgroundGradientPrimary w-full shadow-md p-2 rounded-md cursor-pointer text-lightActive">
-              Pattern
-            </li>
-          </ul>
-
-          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {Array.from(new Array(9)).map((_, index) => (
-              <li
-                key={index}
-                className="p-4 rounded-md bg-gradient-to-br from-darkBlue-900 to-transparent shadow-md space-y-3"
-              >
-                <img src={nf1Image} />
-                <p className="text-lightMuted">@something</p>
-                <h3>Yellow Pointing</h3>
-                <Button className="w-full">Place a bid</Button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <CharactersSection />
 
       <section>
         <div className="primary-container py-12">

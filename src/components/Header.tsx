@@ -1,7 +1,10 @@
 import { HiSearch } from 'react-icons/hi'
+import { useCharacterStore } from 'store/CharacterStore'
 import Button from './base/Button'
 
 const Header = () => {
+  const { query, setQuery } = useCharacterStore()
+
   return (
     <header className="py-4">
       <div className="primary-container">
@@ -18,6 +21,8 @@ const Header = () => {
             <input
               className="py-4 border-none w-full focus:outline-none bg-transparent text-lightActive placeholder:text-lightMuted shadow-md"
               placeholder="Search items, games...."
+              value={query}
+              onChange={(evt) => setQuery(evt.target.value)}
             />
           </div>
           <Button size="medium" className="w-full sm:w-auto">
