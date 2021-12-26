@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import useSWR from 'swr'
+import { Link } from 'react-router-dom'
 
 import Button from 'components/base/Button'
 import EmptyState from 'components/EmptyState'
@@ -8,6 +9,8 @@ import { getCharacterText, getCurrency } from 'utils/helpers'
 import { characterCategories, CharacterCategoriesType } from 'data/character'
 import { useCharacterStore } from 'store/CharacterStore'
 import useDebounce from 'hooks/useDebounce'
+
+import logo from 'assets/images/logo.png'
 
 const CharactersSection = () => {
   const { query } = useCharacterStore()
@@ -82,7 +85,7 @@ const CharactersSection = () => {
               >
                 <img
                   className="w-full max-h-96 object-contain flex-1"
-                  src={char.pictureUrl}
+                  src={char.pictureUrl || logo}
                 />
                 <div className="space-y-3">
                   <p className="text-lightMuted">
@@ -94,7 +97,11 @@ const CharactersSection = () => {
                       {getCurrency(char.wealth)}
                     </span>
                   </div>
-                  <Button className="w-full">Details</Button>
+                  <div>
+                    <Link to={`/character/${char.slug}`} className="w-full">
+                      <Button className="w-full">Details</Button>
+                    </Link>
+                  </div>
                 </div>
               </li>
             )

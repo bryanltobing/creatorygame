@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom'
 import { SWRConfig } from 'swr'
 import axios from 'axios'
+import { BrowserRouter } from 'react-router-dom'
 
 import './index.css'
 import App from './App'
@@ -20,16 +21,20 @@ const fetcher = async (url: string) => {
 
 ReactDOM.render(
   <React.StrictMode>
-    <SWRConfig
-      value={{
-        fetcher,
-        dedupingInterval: 10000,
-      }}
-    >
-      <Layout>
-        <App />
-      </Layout>
-    </SWRConfig>
+    <Suspense fallback={<div>Loading...</div>}>
+      <BrowserRouter>
+        <SWRConfig
+          value={{
+            fetcher,
+            dedupingInterval: 10000,
+          }}
+        >
+          <Layout>
+            <App />
+          </Layout>
+        </SWRConfig>
+      </BrowserRouter>
+    </Suspense>
   </React.StrictMode>,
   document.getElementById('root')
 )
