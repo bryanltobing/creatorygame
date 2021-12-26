@@ -14,7 +14,7 @@ const CharacterDetailsPage = () => {
     <div>
       <section>
         <div className="primary-container py-12">
-          <div className="flex justify-evenly gap-8">
+          <div className="flex flex-col sm:flex-row justify-evenly gap-8">
             <div className="w-full">
               <img className="mx-auto" src={data?.pictureUrl || logo} />
             </div>
