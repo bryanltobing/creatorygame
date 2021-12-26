@@ -8,6 +8,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        primaryOrange: '#984D38',
         darkBlue: {
           50: '#ebeefd',
           100: '#c7ccea',
@@ -20,6 +21,8 @@ module.exports = {
           800: '#151a38',
           900: '#060917',
         },
+        lightActive: '#fff',
+        lightMuted: '#c7ccea',
       },
     },
   },

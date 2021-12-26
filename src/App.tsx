@@ -15,9 +15,9 @@ function App() {
 
       <section>
         <div className="primary-container py-12 border-b-2">
-          <h1 className="text-center font-bold text-white text-4xl sm:text-5xl md:text-8xl w-full">
+          <h1 className="text-center font-bold text-4xl sm:text-5xl md:text-8xl w-full">
             GAME CHARACTER{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#671AE4] to-[#B75CFF]">
+            <span className="backgroundGradientPrimary text-transparent bg-clip-text">
               COLLECTIONS
             </span>
           </h1>
@@ -26,7 +26,7 @@ function App() {
 
       <section>
         <div className="primary-container py-12 space-y-4">
-          <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full text-darkBlue-200 text-center">
+          <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full text-lightMuted text-center">
             <li className="w-full bg-gradient-to-br from-darkBlue-900 to-transparent shadow-md p-2 rounded-md cursor-pointer">
               Art
             </li>
@@ -36,7 +36,7 @@ function App() {
             <li className="w-full bg-gradient-to-br from-darkBlue-900 to-transparent shadow-md p-2 rounded-md cursor-pointer">
               Photography
             </li>
-            <li className="w-full bg-gradient-to-br from-[#671AE4] to-[#B75CFF] shadow-md p-2 rounded-md cursor-pointer text-white">
+            <li className="backgroundGradientPrimary w-full shadow-md p-2 rounded-md cursor-pointer text-lightActive">
               Pattern
             </li>
           </ul>
@@ -48,9 +48,9 @@ function App() {
                 className="p-4 rounded-md bg-gradient-to-br from-darkBlue-900 to-transparent shadow-md space-y-3"
               >
                 <img src={nf1Image} />
-                <p className="text-darkBlue-200">@something</p>
+                <p className="text-lightMuted">@something</p>
                 <h3>Yellow Pointing</h3>
-                <button className="w-full bg-gradient-to-br from-[#671AE4] to-[#B75CFF] shadow-md p-2 rounded-md cursor-pointer text-white">
+                <button className="backgroundGradientPrimary w-full shadow-md p-2 rounded-md cursor-pointer">
                   Place a bid
                 </button>
               </li>
@@ -61,7 +61,7 @@ function App() {
 
       <section>
         <div className="primary-container py-12">
-          <div className="bg-gradient-to-br from-[#671AE4] to-[#B75CFF] rounded-md shadow-md p-12">
+          <div className="backgroundGradientPrimary rounded-md shadow-md p-12">
             <h2 className="text-3xl sm:text-4xl text-center font-bold leading-normal">
               Create your own <br />
               CHARACTER
@@ -80,12 +80,12 @@ function App() {
 
       <section>
         <div className="primary-container py-12">
-          <p className="text-darkBlue-200 text-center">
+          <p className="text-lightMuted text-center">
             Created by{' '}
             <a
               target="_blank"
               rel="noreferrer nofollow"
-              className="text-white hover:underline"
+              className="text-lightActive hover:underline"
               href="https://twitter.com/bryantobing12"
             >
               Bryan Lumbantobing{' '}

@@ -9,6 +9,10 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  .backgroundGradientPrimary {
+    @apply bg-gradient-to-br from-[#671AE4] to-[#B75CFF];
+  }
 }
 
 body {
