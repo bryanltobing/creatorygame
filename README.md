@@ -17,8 +17,23 @@
    },
 ```
 
+## Create ENV File (Required)
+
+`touch .env.local` or `touch .env`
+
+Env file
+
+```sh
+  VITE_API_URL=(API_URL)
+``` 
+  e.g 
+```sh
+  VITE_API_URL=http://localhost:3000
+```
+
 
 ```
+
   # to install all dependencies
   yarn install
   
